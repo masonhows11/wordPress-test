@@ -1,5 +1,5 @@
 // alert('loaded in admin panel');
-$(document).ready(function ($){
+jQuery(document).ready(function ($){
 
 
     $('#sendAjaxRequest').on('click',function (event){
@@ -8,8 +8,12 @@ $(document).ready(function ($){
             url:'/wp-admin/admin-ajax.php',
             type:'post',
             data:{
-
-            }
+                action:'calculate_operation',
+                numberOne:56,
+                numberTwo:50,
+            },
+            success:function (){},
+            error:function (){}
         })
 
     })
