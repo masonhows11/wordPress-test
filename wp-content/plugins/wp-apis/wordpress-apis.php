@@ -44,6 +44,9 @@ if(is_admin()){
     include WP_APIS_INC.'admin/metaboxes.php';
     include WP_APIS_INC.'admin/menus.php';
 }
+// this file access everywhere in this plugin
+// also in front & in admin
+include WP_APIS_INC.'ajax.php';
 
 // for register styles & scripts in wordpress for front section
 add_action('wp_enqueue_scripts','wp_apis_register_styles');
