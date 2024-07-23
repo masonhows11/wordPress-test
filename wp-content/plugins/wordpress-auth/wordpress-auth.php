@@ -1,10 +1,10 @@
 <?php
 /*
-Plugin Name: wordPress Apis
+Plugin Name: wordPress Auth Apis
 Plugin URI: http://websolor.ir/
-Description: A wordPress plugin to work with apis
+Description: A wordPress Auth plugin
 Author: Naeem Soltany
-Text Domain: shortcodes test
+Text Domain: new wordPress auth system
 Version: 1.0.0
 Author URI: http://websolor.ir/
 */
