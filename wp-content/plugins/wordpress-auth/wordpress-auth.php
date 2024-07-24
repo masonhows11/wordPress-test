@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: wordPress Auth Apis
+Plugin Name: wordPress Auth Sys
 Plugin URI: http://websolor.ir/
 Description: A wordPress Auth plugin
 Author: Naeem Soltany
