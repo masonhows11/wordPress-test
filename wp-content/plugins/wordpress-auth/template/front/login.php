@@ -1,2 +1,24 @@
+<div class="auth-wrapper">
+    <div class="login-wrapper">
 
-<?php
+        <form action="">
+            <div class="form-row">
+                <label for="email">ایمیل</label>
+                <input type="email" name="email" id="email">
+            </div>
+
+            <div class="form-row">
+                <label for="password">رمز عبور</label>
+                <input type="password" name="password" id="password">
+            </div>
+
+
+            <div class="form-row">
+                <button name="submit-login">ورورد</button>
+            </div>
+        </form>
+
+
+
+    </div>
+</div>

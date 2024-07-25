@@ -1,12 +1,11 @@
 <?php
-function wp_auth_login_handler($attr,$content = null)
+function wp_auth_login_handler($atts,$content = null)
 {
-
-
+    
    include WP_AUTH_TPL . "front/login.php";
 
 }
-function wp_auth_register_handler($attr,$content = null){
+function wp_auth_register_handler($atts,$content = null){
 
     include WP_AUTH_TPL . "front/register.php";
 }
