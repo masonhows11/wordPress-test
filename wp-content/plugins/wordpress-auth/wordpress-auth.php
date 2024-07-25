@@ -8,11 +8,11 @@ Text Domain: new wordPress auth system
 Version: 1.0.0
 Author URI: http://websolor.ir/
 */
-
 define('WP_AUTH_DIR', plugin_dir_path(__FILE__));
 define('WP_AUTH_URL', plugin_dir_url(__FILE__));
+//
 define('WP_AUTH_INC',WP_AUTH_DIR.'/inc/');
 define('WP_AUTH_TPL',WP_AUTH_DIR.'/template/');
-
+//
 include WP_AUTH_INC."functions.php";
 include WP_AUTH_INC."shortcodes.php";
