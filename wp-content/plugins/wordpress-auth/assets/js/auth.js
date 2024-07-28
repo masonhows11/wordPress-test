@@ -4,7 +4,7 @@ jQuery(document).ready(function ($) {
     // login ajax
     $('#custom-login-form').on('submit', function (event) {
         event.preventDefault();
-        let notify = $('alert');
+        let notify = $('.alert');
         let email = $('email').val();
         let pass = $('password').val();
         $.ajax({
@@ -21,7 +21,7 @@ jQuery(document).ready(function ($) {
             },
             error: function (error) {
                 if (error){
-                    notify.addClass('alert-success');
+                    notify.addClass('alert-error');
                     notify.append('<p> خطایی رخداده است </p>');
                     notify.css('display','block');
                     console.log(error);
@@ -35,6 +35,8 @@ jQuery(document).ready(function ($) {
     // register ajax
     $('#custom-register-form').on('submit', function (event) {
         event.preventDefault();
+
+        let notify = $('.alert');
         let username = $('username').val();
         let family = $('family').val();
         let email = $('email').val();
@@ -54,7 +56,12 @@ jQuery(document).ready(function ($) {
                 console.log(res);
             },
             error: function (error) {
-                console.log(error);
+                if (error){
+                    notify.addClass('alert-error');
+                    notify.append('<p> خطایی رخداده است </p>');
+                    notify.css('display','block');
+                    console.log(error);
+                }
             }
         });
 
