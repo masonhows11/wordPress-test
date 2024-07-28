@@ -2,6 +2,12 @@
     <div class="register-wrapper">
 
         <form action="">
+
+            <div class="form-row">
+                <label for="username">نام خانوادگی</label>
+                <input type="text" name="username" id="username">
+            </div>
+
             <div class="form-row">
                 <label for="email">ایمیل</label>
                 <input type="email" name="email" id="email">
