@@ -2,8 +2,8 @@
 
 // add styles & scripts
 
-function wp_auth_load_assets(){
-
+function wp_auth_load_assets(): void
+{
     // add styles
     wp_register_style('wp_auth_style',WP_AUTH_URL . 'assets/css/auth.css');
     wp_enqueue_style('wp_auth_style');

@@ -1,6 +1,6 @@
 <div class="auth-wrapper">
     <div class="login-wrapper">
-        <form action="">
+        <form action="" method="post" id="custom-login-form">
 
             <div class="form-row">
                 <label for="email">ایمیل</label>
@@ -13,7 +13,7 @@
             </div>
 
             <div class="form-row">
-                <button type="submit" class="btn" name="submit-login">ورورد</button>
+                <button type="submit" id="login-btn" class="btn" name="submit-login">ورورد</button>
             </div>
         </form>
 

@@ -1,7 +1,7 @@
 <div class="auth-wrapper">
     <div class="register-wrapper">
 
-        <form action="">
+        <form action="" method="post" id="custom-register-form">
 
             <div class="form-row">
                 <label for="username">نام خانوادگی</label>
@@ -20,7 +20,7 @@
 
 
             <div class="form-row">
-                <button type="submit" class="btn" name="submit-register">ثبت نام</button>
+                <button type="submit" id="register-btn" class="btn" name="submit-register">ثبت نام</button>
             </div>
         </form>
 
