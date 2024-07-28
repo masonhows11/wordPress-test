@@ -5,8 +5,8 @@ jQuery(document).ready(function ($) {
     $('#custom-login-form').on('submit', function (event) {
         event.preventDefault();
         let notify = $('.alert');
-        let email = $('email').val();
-        let pass = $('password').val();
+        let email = $('#email').val();
+        let pass = $('#password').val();
         $.ajax({
             url: '/wp-admin/admin-ajax.php',
             type: 'post',
@@ -26,8 +26,6 @@ jQuery(document).ready(function ($) {
                     notify.css('display','block');
                     console.log(error);
                 }
-
-
             }
         });
     });
@@ -37,10 +35,10 @@ jQuery(document).ready(function ($) {
         event.preventDefault();
 
         let notify = $('.alert');
-        let username = $('username').val();
-        let family = $('family').val();
-        let email = $('email').val();
-        let pass = $('password').val();
+        let username = $('#username').val();
+        let family = $('#family').val();
+        let email = $('#email').val();
+        let pass = $('#password').val();
         $.ajax({
             url: '/wp-admin/admin-ajax.php',
             type: 'post',

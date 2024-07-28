@@ -4,7 +4,6 @@
     </div>
 
     <div class="register-wrapper">
-
         <form action="" method="post" id="custom-register-form">
 
             <div class="form-row">
