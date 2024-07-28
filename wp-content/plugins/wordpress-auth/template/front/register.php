@@ -20,7 +20,7 @@
 
 
             <div class="form-row">
-                <button name="submit-register">ثبت نام</button>
+                <button type="submit" class="btn" name="submit-register">ثبت نام</button>
             </div>
         </form>
 
