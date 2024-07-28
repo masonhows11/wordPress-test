@@ -1,11 +1,20 @@
 <div class="auth-wrapper">
+
+    <div class="alert" style="display: none">
+    </div>
+
     <div class="register-wrapper">
 
         <form action="" method="post" id="custom-register-form">
 
             <div class="form-row">
-                <label for="username">نام خانوادگی</label>
+                <label for="username">نام</label>
                 <input type="text" name="username" id="username">
+            </div>
+
+            <div class="form-row">
+                <label for="family">نام خانوادگی</label>
+                <input type="text" name="family" id="family">
             </div>
 
             <div class="form-row">

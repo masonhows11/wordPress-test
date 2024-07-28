@@ -1,4 +1,8 @@
 <div class="auth-wrapper">
+
+    <div class="alert" style="display: none">
+    </div>
+
     <div class="login-wrapper">
         <form action="" method="post" id="custom-login-form">
 

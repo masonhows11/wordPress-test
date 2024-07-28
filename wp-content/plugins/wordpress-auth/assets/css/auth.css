@@ -31,3 +31,14 @@
 .auth-wrapper .form-row{
     padding: 10px 0 10px 0;
 }
+.auth-wrapper .alert{
+    padding: 12px;
+    border-radius: 5px;
+    text-align: center;
+}
+.auth-wrapper .alert.alert-error{
+    background: #eeaeae;
+}
+.auth-wrapper .alert.alert-success{
+    background: #c9e6a9;
+}
