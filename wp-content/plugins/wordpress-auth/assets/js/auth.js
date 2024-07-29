@@ -20,11 +20,14 @@ jQuery(document).ready(function ($) {
                 console.log(res);
             },
             error: function (error) {
-                if (error){
+
+                if (error) {
+
+                    let message = error.responseJSON.message;
                     notify.addClass('alert-error');
-                    notify.append('<p> خطایی رخداده است </p>');
-                    notify.css('display','block');
-                    console.log(error);
+                    notify.append('<p>' + message + '</p>');
+                    notify.css('display', 'block');
+                    notify.delay(2000).hide(400);
                 }
             }
         });
@@ -54,10 +57,10 @@ jQuery(document).ready(function ($) {
                 console.log(res);
             },
             error: function (error) {
-                if (error){
+                if (error) {
                     notify.addClass('alert-error');
                     notify.append('<p> خطایی رخداده است </p>');
-                    notify.css('display','block');
+                    notify.css('display', 'block');
                     console.log(error);
                 }
             }
