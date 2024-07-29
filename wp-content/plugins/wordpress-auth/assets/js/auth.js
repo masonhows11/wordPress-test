@@ -19,9 +19,9 @@ jQuery(document).ready(function ($) {
             success: function (response) {
 
                 if(response.success){
-                    notify.addClass('alert-success');
-                    notify.append('<p>' + response.message + '</p>');
-                    notify.css('display', 'block');
+                    notify.removeClass('alert-class').addClass('alert-success');
+                    notify.html('<p>' + response.message + '</p>');
+                    notify.show(300);
                     setTimeout(function (){
                         window.location.href = '/';
                     },2000)
@@ -34,7 +34,7 @@ jQuery(document).ready(function ($) {
 
                     let message = error.responseJSON.message;
                     notify.addClass('alert-error');
-                    notify.append('<p>' + message + '</p>');
+                    notify.html('<p>' + message + '</p>');
                     notify.css('display', 'block');
                     notify.delay(2000).hide(400);
                 }
