@@ -1,5 +1,6 @@
 <?php
 
+// for login
 function wp_auth_do_login()
 {
     $user_email = sanitize_text_field($_POST['user_email']);
@@ -40,9 +41,7 @@ function wp_auth_do_login()
         'message' => 'ورود با موفقیت انجام شد',
     ], 200);
 }
-
-add_action('wp_ajax_nopriv_wp_auth_login', 'wp_auth_do_login');
-
+// validate login form
 function wp_auth_validate_email_and_password($email, $password)
 {
 
@@ -71,3 +70,44 @@ function wp_auth_validate_email_and_password($email, $password)
 
     return $result;
 }
+// for register
+function wp_auth_do_register(){
+    $first_name = sanitize_text_field($_POST['user_name']);
+    $last_name = sanitize_text_field($_POST['family']);
+    $user_email = sanitize_text_field($_POST['user_email']);
+    $user_password = sanitize_text_field($_POST['user_password']);
+    var_dump($first_name,$last_name);
+    $validateResult =  wp_validate_register_request($first_name,$last_name,$user_email,$user_password);
+}
+// validate register form
+function wp_validate_register_request($first_name,$last_name,$user_email,$user_password)
+{
+    $result = [
+        'is_valid' => true,
+        'message' => "",
+    ];
+
+    if (empty($email)) {
+        $result['is_valid'] = false;
+        $result['message'] = 'ایمیل نمی تواند خالی باشد';
+        return $result;
+    }
+
+    if (empty($password)) {
+        $result['is_valid'] = false;
+        $result['message'] = 'رمز عبور نمی تواند خالی باشد';
+        return $result;
+    }
+
+    if (!is_email($email)) {
+        $result['is_valid'] = false;
+        $result['message'] = 'ایمیل وارد شده معتبر نمی باشد';
+        return $result;
+    }
+
+    return $result;
+}
+
+// actions
+add_action('wp_ajax_nopriv_wp_auth_register', 'wp_auth_do_register');
+add_action('wp_ajax_nopriv_wp_auth_login', 'wp_auth_do_login');

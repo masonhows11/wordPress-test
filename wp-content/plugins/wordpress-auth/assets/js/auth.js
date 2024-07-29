@@ -68,7 +68,7 @@ jQuery(document).ready(function ($) {
             error: function (error) {
                 if (error) {
                     notify.addClass('alert-error');
-                    notify.append('<p> خطایی رخداده است </p>');
+                    notify.html('<p> خطایی رخداده است </p>');
                     notify.css('display', 'block');
                     console.log(error);
                 }
