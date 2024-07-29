@@ -68,7 +68,8 @@ jQuery(document).ready(function ($) {
                     notify.html('<p>' + response.message + '</p>');
                     notify.show(300);
                     setTimeout(function (){
-                        window.location.href = '/';
+                       // window.location.href = '/';
+                        window.location.href = '/login';
                     },2000)
 
                 }
