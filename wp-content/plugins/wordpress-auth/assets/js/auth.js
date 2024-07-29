@@ -16,8 +16,17 @@ jQuery(document).ready(function ($) {
                 user_email: email,
                 user_password: pass,
             },
-            success: function (res) {
-                console.log(res);
+            success: function (response) {
+
+                if(response.success){
+                    notify.addClass('alert-success');
+                    notify.append('<p>' + response.message + '</p>');
+                    notify.css('display', 'block');
+                    setTimeout(function (){
+                        window.location.href = '/';
+                    },2000)
+
+                }
             },
             error: function (error) {
 
