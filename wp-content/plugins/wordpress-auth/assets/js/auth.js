@@ -4,6 +4,7 @@ jQuery(document).ready(function ($) {
     // login ajax
     $('#custom-login-form').on('submit', function (event) {
         event.preventDefault();
+
         let notify = $('.alert');
         let email = $('#email').val();
         let pass = $('#password').val();
@@ -29,9 +30,7 @@ jQuery(document).ready(function ($) {
                 }
             },
             error: function (error) {
-
                 if (error) {
-
                     let message = error.responseJSON.message;
                     notify.addClass('alert-error');
                     notify.html('<p>' + message + '</p>');
@@ -62,15 +61,28 @@ jQuery(document).ready(function ($) {
                 user_name: username,
                 family: family,
             },
-            success: function (res) {
-                console.log(res);
+            success: function (response) {
+                console.log(response);
+                if(response.success){
+                    notify.removeClass('alert-class').addClass('alert-success');
+                    notify.html('<p>' + response.message + '</p>');
+                    notify.show(300);
+                    setTimeout(function (){
+                        window.location.href = '/';
+                    },2000)
+
+                }
             },
             error: function (error) {
+
+                console.log(error);
+
                 if (error) {
+                    let message = error.responseJSON.message;
                     notify.addClass('alert-error');
-                    notify.html('<p> خطایی رخداده است </p>');
+                    notify.html('<p>' + message + '</p>');
                     notify.css('display', 'block');
-                    console.log(error);
+                    notify.delay(2000).hide(400);
                 }
             }
         });

@@ -5,12 +5,12 @@ function wp_auth_do_login()
 {
     $user_email = sanitize_text_field($_POST['user_email']);
     $user_password = sanitize_text_field($_POST['user_password']);
-    $validate_result = wp_auth_validate_email_and_password($user_email, $user_password);
-    if (!$validate_result['is_valid']) {
+    $validateResult = wp_auth_validate_email_and_password($user_email, $user_password);
+    if (!$validateResult['is_valid']) {
 
         wp_send_json([
             'success' => false,
-            'message' => $validate_result['message']
+            'message' => $validateResult['message']
         ], 403);
 
     }
@@ -49,7 +49,6 @@ function wp_auth_validate_email_and_password($email, $password)
         'is_valid' => true,
         'message' => "",
     ];
-
     if (empty($email)) {
         $result['is_valid'] = false;
         $result['message'] = 'ایمیل نمی تواند خالی باشد';
@@ -72,12 +71,20 @@ function wp_auth_validate_email_and_password($email, $password)
 }
 // for register
 function wp_auth_do_register(){
+
     $first_name = sanitize_text_field($_POST['user_name']);
     $last_name = sanitize_text_field($_POST['family']);
     $user_email = sanitize_text_field($_POST['user_email']);
     $user_password = sanitize_text_field($_POST['user_password']);
-    var_dump($first_name,$last_name);
+
+    // validate 
     $validateResult =  wp_validate_register_request($first_name,$last_name,$user_email,$user_password);
+    if(!$validateResult['is_valid']){
+        wp_send_json([
+            'success' => false,
+            'message' => $validateResult['message']
+        ], 422);
+    }
 }
 // validate register form
 function wp_validate_register_request($first_name,$last_name,$user_email,$user_password)
@@ -87,21 +94,21 @@ function wp_validate_register_request($first_name,$last_name,$user_email,$user_p
         'message' => "",
     ];
 
-    if (empty($email)) {
+    if (empty($first_name) || empty($last_name) || empty($user_email) || empty($user_password)) {
+
         $result['is_valid'] = false;
-        $result['message'] = 'ایمیل نمی تواند خالی باشد';
+        $result['message'] = 'تمامی فیلد ها الزامی می باشد';
         return $result;
     }
-
-    if (empty($password)) {
-        $result['is_valid'] = false;
-        $result['message'] = 'رمز عبور نمی تواند خالی باشد';
-        return $result;
-    }
-
-    if (!is_email($email)) {
+    if (!is_email($user_email)) {
         $result['is_valid'] = false;
         $result['message'] = 'ایمیل وارد شده معتبر نمی باشد';
+        return $result;
+    }
+
+    if(email_exists($user_email)){
+        $result['is_valid'] = false;
+        $result['message'] = 'ایمیل وارد شده در دسترس نمی باشد';
         return $result;
     }
 
