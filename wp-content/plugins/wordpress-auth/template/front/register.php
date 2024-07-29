@@ -4,6 +4,9 @@
     </div>
 
     <div class="register-wrapper">
+        <?php if(isset($wp_auth_options['register_title_form'])): ?>
+            <h2 style="text-align: center"><?php echo $wp_auth_options['register_title_form'] ?></h2>
+        <?php endif; ?>
         <form action="" method="post" id="custom-register-form">
             <div class="form-row">
                 <label for="username">نام</label>

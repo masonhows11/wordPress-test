@@ -2,12 +2,14 @@
 function wp_auth_login_handler($atts, $content = null)
 {
 
+    $wp_auth_options = get_option('wp_auth_options',[]);
     ob_start();
     include WP_AUTH_TPL . "front/login.php";
     return ob_get_clean();
 }
 function wp_auth_register_handler($atts, $content = null)
 {
+    $wp_auth_options = get_option('wp_auth_options',[]);
     ob_start();
     include WP_AUTH_TPL . "front/register.php";
     return ob_get_clean();

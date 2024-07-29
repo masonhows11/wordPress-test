@@ -4,6 +4,9 @@
     </div>
 
     <div class="login-wrapper">
+        <?php if(isset($wp_auth_options['login_title_form'])): ?>
+                <h2 style="text-align: center"><?php echo $wp_auth_options['login_title_form']; ?></h2>
+        <?php endif; ?>
         <form action="" method="post" id="custom-login-form">
 
             <div class="form-row">
