@@ -74,9 +74,6 @@ jQuery(document).ready(function ($) {
                 }
             },
             error: function (error) {
-
-                console.log(error);
-
                 if (error) {
                     let message = error.responseJSON.message;
                     notify.addClass('alert-error');

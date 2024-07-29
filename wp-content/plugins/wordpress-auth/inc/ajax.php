@@ -77,7 +77,7 @@ function wp_auth_do_register(){
     $user_email = sanitize_text_field($_POST['user_email']);
     $user_password = sanitize_text_field($_POST['user_password']);
 
-    // validate 
+    // validate
     $validateResult =  wp_validate_register_request($first_name,$last_name,$user_email,$user_password);
     if(!$validateResult['is_valid']){
         wp_send_json([
