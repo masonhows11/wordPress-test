@@ -1,7 +1,6 @@
 <?php
 function wp_auth_login_handler($atts, $content = null)
 {
-
     $wp_auth_options = get_option('wp_auth_options',[]);
     if(isset($wp_auth_options['is_login_active']) && !$wp_auth_options['is_login_active']){
         return '<div><p  style="text-align: center">امکان ورود در حال حاضز وجود ندارد</p></div>';

@@ -7,7 +7,6 @@ function wp_auth_admin_settings(){
         'wp_auth',
         'wp_auth_settings');
 }
-
 function wp_auth_settings(){
     $wp_auth_options = get_option('wp_auth_options',[]);
     // save settings value
