@@ -43,7 +43,7 @@ function pi_install_db()
     $collate = $wpdb->get_charset_collate();
 
     $customers_table_sql = "
-       CREATE TABLE `{$customers_table_name}` (
+       CREATE TABLE IF NOT EXISTS  `{$customers_table_name}` (
       `id` int NOT NULL,
       `user_id` int NOT NULL,
       `wallet` int NOT NULL,
