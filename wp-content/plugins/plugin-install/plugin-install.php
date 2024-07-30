@@ -38,10 +38,8 @@ function pi_install_db()
     // for set dynamic name for table during active plugin
     // prefix like wp or exp before table name
     $customers_table_name = $wpdb->prefix . 'customers';
-
     // for set dynamic collate for table during active plugin
     $collate = $wpdb->get_charset_collate();
-
     $customers_table_sql = "
        CREATE TABLE IF NOT EXISTS  `{$customers_table_name}` (
       `id` int NOT NULL,
@@ -50,7 +48,6 @@ function pi_install_db()
       `total_orders` int NOT NULL
     ) {$collate};
     ";
-
     // for run sql query during activate plugin
     require_once(ABSPATH.'wp-admin/includes/upgrade.php');
     dbDelta($customers_table_sql);
