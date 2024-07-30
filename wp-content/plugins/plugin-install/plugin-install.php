@@ -65,8 +65,23 @@ function pi_install_db()
     //    ) {$collate};
     //    ";
 }
+
+function pi_uninstall(){
+
+    // delete customer able
+    global $wpdb;
+    $customers_table_name = $wpdb->prefix . 'customers';
+    $wpdb->query("DROP TABLE IF EXISTS {$customers_table_name}");
+    // delete pi_configs options
+    delete_option('pi_configs');
+
+
+}
 function pi_activation()
 {
     pi_install_default_configs();
     pi_install_db();
+
+    // for delete default configs
+    register_uninstall_hook(__FILE__,'pi_uninstall');
 }
