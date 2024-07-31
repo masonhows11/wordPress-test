@@ -16,15 +16,8 @@
 		<p class="has-contrast-2-color has-text-color">—</p>
 		<!-- /wp:paragraph -->
 
-        <p class="has-small-font-size has-contrast-2-color has-text-color" >
-            <?php
-            echo get_post_meta(get_the_ID(),'wp_apis_price',true);
-            ?>
-        </p>
 		<!-- wp:paragraph {"fontSize":"small","textColor":"contrast-2"} -->
-		<p class="has-small-font-size has-contrast-2-color has-text-color">
-            <?php echo esc_html_x( 'by', 'Prefix for the post author block: By author name', 'twentytwentyfour' ); ?>
-        </p>
+		<p class="has-small-font-size has-contrast-2-color has-text-color"><?php echo esc_html_x( 'by', 'Prefix for the post author block: By author name', 'twentytwentyfour' ); ?></p>
 		<!-- /wp:paragraph -->
 
 		<!-- wp:post-author-name {"isLink":true} /-->
