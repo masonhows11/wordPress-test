@@ -34,6 +34,8 @@ function sample_setup_theme()
     // is set the title of current post
     add_theme_support('title-tag');
     add_theme_support('post-formats',array('gallery','video','audio'));
+    // for disable admin bar in front end
+    add_filter('show_admin_bar','__return_false');
 
 }
 
