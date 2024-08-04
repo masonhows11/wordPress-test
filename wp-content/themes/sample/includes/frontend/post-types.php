@@ -48,5 +48,5 @@ function register_book_post_type(){
         'show_in_rest'       => true
     );
 
-    register_post_type('book',$args);
+    register_post_type('recipe',$args);
 }

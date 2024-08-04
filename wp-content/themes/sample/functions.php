@@ -43,3 +43,4 @@ function sample_setup_theme()
 // and use this
 include SAMPLE_PATH."/includes/frontend/functions.php";
 include SAMPLE_PATH."/includes/frontend/post-types.php";
+include SAMPLE_PATH."/includes/frontend/taxonomies.php";
