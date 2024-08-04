@@ -29,7 +29,7 @@ function register_book_post_type(){
         'items_list_navigation' => _x( 'Recipes list navigation', 'Screen reader text for the pagination heading on the post type listing screen. Default “Posts list navigation”/”Pages list navigation”. Added in 4.4', 'recipe' ),
         'items_list'            => _x( 'Recipes list', 'Screen reader text for the items list heading on the post type listing screen. Default “Posts list”/”Pages list”. Added in 4.4', 'recipe' ),
     );
-    
+
     $args = array(
         'labels'             => $labels,
         'description'        => 'Recipe custom post type.',

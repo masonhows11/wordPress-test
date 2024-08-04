@@ -42,3 +42,4 @@ function sample_setup_theme()
 // we can write any custom code in below file
 // and use this
 include SAMPLE_PATH."/includes/frontend/functions.php";
+include SAMPLE_PATH."/includes/frontend/post-types.php";
