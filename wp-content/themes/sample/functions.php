@@ -37,6 +37,9 @@ function sample_setup_theme()
     // for disable admin bar in front end
     add_filter('show_admin_bar','__return_false');
 
+    // register nav menu means ( location )
+    register_nav_menu('top_bar','menu for theme top bar');
+
 }
 
 
