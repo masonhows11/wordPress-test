@@ -39,5 +39,7 @@
 <script src="<?php echo get_template_directory_uri();?>/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- Custom scripts for this template -->
 <script src="<?php echo get_template_directory_uri();?>/assets/js/clean-blog.min.js"></script>
+
+<?php wp_footer(); ?>
 </body>
 </html>
