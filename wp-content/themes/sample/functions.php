@@ -34,14 +34,31 @@ function sample_setup_theme()
     // is set the title of current post
     add_theme_support('title-tag');
     add_theme_support('post-formats',array('gallery','video','audio'));
+
     // for disable admin bar in front end
     add_filter('show_admin_bar','__return_false');
-
     // register nav menu means ( location )
     register_nav_menu('top_bar','menu for theme top bar');
-
 }
 
+/**
+ * Add a sidebar.
+ * widget sidebar
+ * for active widgets sidebar in admin section
+ * make sidebar like below
+ */
+function wpdocs_theme_slug_widgets_init() {
+    register_sidebar( array(
+        'name'          => __('Custom Main Sidebar','textdomain' ),
+        'id'            => 'sidebar-1',
+        'description'   => __('Widgets in this area will be shown on all posts and pages.','textdomain'),
+        'before_widget' => '<li id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</li>',
+        'before_title'  => '<h2 class="widgettitle">',
+        'after_title'   => '</h2>',
+    ) );
+}
+add_action('widgets_init','wpdocs_theme_slug_widgets_init' );
 
 // for use custom functions file our theme
 // we can write any custom code in below file
@@ -49,3 +66,6 @@ function sample_setup_theme()
 include SAMPLE_PATH."/includes/frontend/functions.php";
 include SAMPLE_PATH."/includes/frontend/post-types.php";
 include SAMPLE_PATH."/includes/frontend/taxonomies.php";
+// we must include our custom widgets file in functions
+// for active or display custom widgets
+include SAMPLE_PATH."/includes/widgets.php";
