@@ -86,12 +86,12 @@ class UserInformationWidget extends WP_Widget
     }
 }
 
-function register_custom_widget(): void
+function register_userinfo_widget(): void
 {
     // the value for  register_widget is name of widget class
     register_widget('UserInformationWidget');
 }
 
 // for register widget
-add_action('widgets_init', 'register_custom_widget');
+add_action('widgets_init', 'register_userinfo_widget');
 
