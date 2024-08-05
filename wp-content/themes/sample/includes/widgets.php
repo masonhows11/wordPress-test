@@ -49,8 +49,6 @@ class UserInformationWidget extends WP_Widget
         $user = wp_get_current_user();
         //  $title = apply_filters('widget_title', $instance['title']);
         $blog_title = get_bloginfo('name');
-
-
         echo $args['before_widget'] . $args['before_title'] . $instance['title'] . $args['after_title'];
         // start display info
         ?>
@@ -58,7 +56,6 @@ class UserInformationWidget extends WP_Widget
         <p><strong>User:</strong><?php echo $user->display_name ?></p>
         <?php
         // end display info
-
         echo $args['after_widget'];
     }
 
