@@ -47,39 +47,40 @@ class UserInformationWidget extends WP_Widget
     function widget($args, $instance): void
     {
         $user = wp_get_current_user();
-        $title = apply_filters( 'widget_title', $instance[ 'title' ] );
-        $blog_title = get_bloginfo( 'name' );
+        //  $title = apply_filters('widget_title', $instance['title']);
+        $blog_title = get_bloginfo('name');
 
+
+        echo $args['before_widget'] . $args['before_title'] . $instance['title'] . $args['after_title'];
         // start display info
-        echo $args['before_widget'] . $args['before_title'] . $title . $args['after_title'];
         ?>
         <p><strong>Site Name:</strong> <?php echo $blog_title ?></p>
-        <p><strong>User:</strong><?php echo $user->display_name  ?></p>
+        <p><strong>User:</strong><?php echo $user->display_name ?></p>
         <?php
         // end display info
 
-       echo $args['after_widget'];
+        echo $args['after_widget'];
     }
 
     // for display setting in admin section
     // like config title
     function form($instance)
     {
-
-
-        //        $title = ! empty( $instance['title'] ) ? $instance['title'] : ''; ?>
-        <!--        <p>-->
-        <!--        <label for="--><?php //echo $this->get_field_id( 'title' ); ?><!--">Title:</label>-->
-        <!--        <input type="text" id="--><?php //echo $this->get_field_id( 'title' ); ?><!--" name="--><?php //echo $this->get_field_name( 'title' ); ?><!--" value="--><?php //echo esc_attr( $title ); ?><!--" />-->
-        <!--        </p>--><?php
+        $title = !empty($instance['title']) ? $instance['title'] : '';
+        ?>
+        <p>
+        <label for="<?php echo $this->get_field_id('title'); ?>">عنوان ابزارک:</label>
+        <input type="text" id="<?php echo $this->get_field_id('title'); ?>"
+               name="<?php echo $this->get_field_name('title'); ?>" value="<?php echo esc_attr($title); ?>"/>
+        </p><?php
     }
 
     // To apply new settings in the admin section
     function update($new_instance, $old_instance)
     {
-        //        $instance = $old_instance;
-        //        $instance[ 'title' ] = strip_tags( $new_instance[ 'title' ] );
-        //        return $instance;
+        $instance = $old_instance;
+        $instance['title'] = strip_tags($new_instance['title']);
+        return $instance;
     }
 }
 
