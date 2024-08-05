@@ -26,6 +26,8 @@
 
 
                         <?php the_content(); ?>
+                        <!-- for add link page for one post  -->
+                        <?php wp_link_pages(); ?>
 
                     </div>
                 </div>
