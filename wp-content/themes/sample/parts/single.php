@@ -32,7 +32,9 @@
             </div>
         </article>
         <hr>
-
-
     <?php endwhile; ?>
+    <!--  set next link to access next post    -->
+    <?php next_post_link(); ?>
+    <!--  set previous link to access previous post    -->
+    <?php previous_post_link(); ?>
 <?php endif; ?>

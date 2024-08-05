@@ -22,7 +22,9 @@
             <?php endif; ?>
             <!-- Pager -->
             <div class="clearfix">
-                <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+                <?php next_posts_link('مصالب قدیمی تر'); ?>
+<!--                <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>-->
+                <?php previous_posts_link('مطالب  جدید تر'); ?>
             </div>
         </div>
     </div>
