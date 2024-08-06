@@ -21,9 +21,9 @@
                     <a class="nav-link" href="contact.html">Contact</a>
                 </li>
             </ul>
-            <?php  wp_nav_menu([
-                'theme_location' => 'top-bar'
-            ]) ?>
+<!--            --><?php // wp_nav_menu([
+//                'theme_location' => 'top-bar'
+//            ]) ?>
         </div>
     </div>
 </nav>
