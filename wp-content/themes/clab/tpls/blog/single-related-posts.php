@@ -5,7 +5,9 @@
                 <h5>پست های مشابه</h5>
             </div>
         </div>
+
         <div class="row justify-content-center">
+
             <div class="col-md-4">
                 <div class="card border-0 mb-md-0 mb-3 box-hover">
                     <a href="#"><img class="card-img-top" src="<?php echo CLAB_URL; ?>assets/img/cards/3a.jpg" alt="card image"></a>
@@ -24,6 +26,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-md-4">
                 <div class="card border-0 mb-md-0 mb-3 box-hover">
                     <a href="#"><img class="card-img-top" src="<?php echo CLAB_URL; ?>assets/img/cards/3b.jpg" alt="card image"></a>
@@ -42,6 +45,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-md-4">
                 <div class="card border-0 mb-md-0 mb-3 box-hover">
                     <a href="#"><img class="card-img-top" src="<?php echo CLAB_URL; ?>assets/img/cards/3c.jpg" alt="card image"></a>
