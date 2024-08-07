@@ -12,6 +12,8 @@ add_action('after_theme_setup','clab_setup');
 function clab_setup(){
 
     add_theme_support('title-tag');
+
+    add_image_size('blog-index-thumbnail-size', 730, 432);
 }
 
 // hide admin bar in front
