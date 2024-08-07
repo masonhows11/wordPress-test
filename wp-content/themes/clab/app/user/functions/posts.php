@@ -8,7 +8,7 @@ function get_related_posts($category_id, $count = -1)
     ]);
 
     if ($related_posts->have_posts()):
-        while ($related_posts->have_posts()): the_post();
+        while ($related_posts->have_posts()): $related_posts->the_post();
             $related_posts_collection[] = [
                 'title' => get_the_title(),
                 'category' => get_the_category(),

@@ -1,3 +1,8 @@
+<?php
+$cats = get_the_category();
+$related_posts = get_related_posts($cats[0]->term_id,3);
+?>
+
 <section class="section-gap bg-gray">
     <div class="container">
         <div class="row mb-lg-5 mb-4">
@@ -8,62 +13,28 @@
 
         <div class="row justify-content-center">
 
-            <div class="col-md-4">
+            <?php foreach ($related_posts as $post): ?>
+            <div class="col-md-4 mt-2">
                 <div class="card border-0 mb-md-0 mb-3 box-hover">
-                    <a href="#"><img class="card-img-top" src="<?php echo CLAB_URL; ?>assets/img/cards/3a.jpg" alt="card image"></a>
+                    <a href="#"><img class="card-img-top" src="<?php  $post['thumbnail'] != null ?  $post['thumbnail'] : CLAB_URL . 'assets/img/cards/3a.jpg'  ?>" alt="card image"></a>
                     <div class="card-body py-4">
-                        <a href="#" class="mb-2 d-block">مسافرت</a>
-                        <h5 class="mb-4"><a href="#">زندگی را دوست داشته باشید</a></h5>
+                        <a href="<?php echo $post['link'] ?>" class="mb-2 d-block"><?php echo $post['category'][0]->name ?></a>
+                        <h5 class="mb-4"><a href="<?php echo $post['link'] ?>"><?php echo $post['title'] ?></a></h5>
                         <div class="mb-4">
-                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
+                            <p><?php echo $post['exceprt'] ?></p>
                         </div>
                     </div>
                     <div class="card-footer">
                         <div class="d-flex align-items-center">
-                            <img class="avatar-sm rounded-circle mr-3" src="<?php echo CLAB_URL; ?>assets/img/avatar1.jpg" alt="توماس جانسون">
-                            <span>توماس جانسون</span>
+                            <img class="avatar-sm rounded-circle mr-3" src="<?php echo $post['avatar']; ?>" alt="<?php echo $post['author'] ?>">
+                            <span><?php echo $post['author'] ?></span>
                         </div>
                     </div>
                 </div>
             </div>
+            <?php endforeach; ?>
 
-            <div class="col-md-4">
-                <div class="card border-0 mb-md-0 mb-3 box-hover">
-                    <a href="#"><img class="card-img-top" src="<?php echo CLAB_URL; ?>assets/img/cards/3b.jpg" alt="card image"></a>
-                    <div class="card-body py-4">
-                        <a href="#" class="mb-2 d-block">هنر</a>
-                        <h5 class="mb-4"><a href="#">مسابقه نقاشی در خیابان</a></h5>
-                        <div class="mb-4">
-                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <div class="d-flex align-items-center">
-                            <img class="avatar-sm rounded-circle mr-3" src="<?php echo CLAB_URL; ?>assets/img/avatar1.jpg" alt="توماس جانسون">
-                            <span>توماس جانسون</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="col-md-4">
-                <div class="card border-0 mb-md-0 mb-3 box-hover">
-                    <a href="#"><img class="card-img-top" src="<?php echo CLAB_URL; ?>assets/img/cards/3c.jpg" alt="card image"></a>
-                    <div class="card-body py-4">
-                        <a href="#" class="mb-2 d-block">آژمایشگاه</a>
-                        <h5 class="mb-4"><a href="#">مسابقه نقاشی در خیابان</a></h5>
-                        <div class="mb-4">
-                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</p>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <div class="d-flex align-items-center">
-                            <img class="avatar-sm rounded-circle mr-3" src="<?php echo CLAB_URL; ?>assets/img/avatar1.jpg" alt="توماس جانسون">
-                            <span>توماس جانسون</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </section>
