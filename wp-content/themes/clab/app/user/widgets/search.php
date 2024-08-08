@@ -11,11 +11,20 @@ class Clab_search_widget extends WP_Widget
 
     public function widget($args, $instance)
     {
+        echo $args['before_widget'];
+        echo $args['before_title'];
         ?>
-
-
-
+        <form>
+            <div class="form-group">
+                <div class="icon-field">
+                    <i class="vl-search"></i>
+                    <input type="text" name="s" class="form-control" placeholder="جستجو">
+                </div>
+            </div>
+        </form>
         <?php
+        echo $args['after_widget'];
+        echo $args['after_title'];
     }
 
     public function form($instance)

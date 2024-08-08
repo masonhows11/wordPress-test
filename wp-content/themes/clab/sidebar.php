@@ -1,14 +1,12 @@
 <div class="col-lg-4">
     <div class="blog-widget mb-4">
         <form>
-
             <div class="form-group">
                 <div class="icon-field">
                     <i class="vl-search"></i>
                     <input type="text" name="s" class="form-control" placeholder="جستجو">
                 </div>
             </div>
-
         </form>
     </div>
     <div class="blog-widget mb-4">
