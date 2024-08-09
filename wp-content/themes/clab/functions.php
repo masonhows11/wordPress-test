@@ -3,10 +3,7 @@
 define('CLAB_URL', get_template_directory_uri().'/');
 define('CLAB_PATH', get_template_directory().DIRECTORY_SEPARATOR);
 const CLAB_APP = CLAB_PATH . 'app' . DIRECTORY_SEPARATOR ;
-
 const CLAB_ASSETS_URL = CLAB_URL . 'assets';
-
-
 //
 add_action('after_theme_setup','clab_setup');
 function clab_setup(){
@@ -14,7 +11,25 @@ function clab_setup(){
     add_theme_support('title-tag');
 
     add_image_size('blog-index-thumbnail-size', 730, 432);
+
+
 }
+function register_clab_blog_sidebar(){
+
+    //register sidebars
+    register_sidebar([
+        'name'          => 'Blog Sidebar',
+        'id'            => 'clab-blog-sidebar',    // ID should be LOWERCASE  ! ! !
+        'description'   => 'a sidebar for theme home page',
+        'class'         => '',
+        'before_widget' => '<div class="blog-widget mb-4">',
+        'after_widget'  => '</div>',
+        'before_title'  => ' <h6 class="mb-4">',
+        'after_title'   => '</h6>'
+    ]);
+}
+
+add_action('widgets_init', 'register_clab_blog_sidebar');
 
 // hide admin bar in front
 add_filter('show_admin_bar','__return_false');

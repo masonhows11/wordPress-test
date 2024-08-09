@@ -1,5 +1,8 @@
 <div class="col-lg-4">
-    <div class="blog-widget mb-4">
+    <?php if(is_active_sidebar('clab-blog-sidebar')): ?>
+        <?php dynamic_sidebar('clab-blog-sidebar') ?>
+    <?php endif; ?>
+   <!-- <div class="blog-widget mb-4">
         <form>
             <div class="form-group">
                 <div class="icon-field">
@@ -8,7 +11,7 @@
                 </div>
             </div>
         </form>
-    </div>
+    </div>-->
     <div class="blog-widget mb-4">
         <h6 class="mb-4">دسته بندی ها</h6>
         <div class="list-group list-group-right-arrow">

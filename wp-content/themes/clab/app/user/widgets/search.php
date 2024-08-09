@@ -3,7 +3,7 @@
 class Clab_search_widget extends WP_Widget
 {
 
-    public function __construct($id_base, $name)
+    public function __construct()
     {
         parent::__construct(false, 'ابزارک جستجو قالب');
     }
@@ -23,8 +23,8 @@ class Clab_search_widget extends WP_Widget
             </div>
         </form>
         <?php
-        echo $args['after_widget'];
         echo $args['after_title'];
+        echo $args['after_widget'];
     }
 
     public function form($instance)
@@ -52,4 +52,4 @@ function register_clab_search_widget()
     register_widget('Clab_search_widget');
 }
 
-add_action('widget_init', 'register_clab_search_widget');
+add_action('widgets_init', 'register_clab_search_widget');
