@@ -1,0 +1,44 @@
+.auth-wrapper{
+    width: 400px;
+}
+.auth-wrapper .form-row {
+    display: flex;
+    flex-direction: column;
+}
+.auth-wrapper .form-row label{
+    padding: 5px 0 5px 0;
+    font-size: large;
+}
+.auth-wrapper .form-row input{
+    border: solid 1px;
+    border-radius: 5px;
+    height: 30px;
+}
+.auth-wrapper .form-row input:hover{
+    border: solid #00A8EF 1px;
+}
+.auth-wrapper .form-row .btn{
+    border: solid gray 1px;
+    background-color: #9143d9;
+    color: white;
+    border-radius: 5px;
+    height: 40px;
+    font-size: large;
+}
+.auth-wrapper .form-row .btn:hover{
+    background-color: #9113d9;
+}
+.auth-wrapper .form-row{
+    padding: 10px 0 10px 0;
+}
+.auth-wrapper .alert{
+    padding: 8px;
+    border-radius: 5px;
+    text-align: center;
+}
+.auth-wrapper .alert.alert-error{
+    background: #eeaeae;
+}
+.auth-wrapper .alert.alert-success{
+    background: #c9e6a9;
+}
