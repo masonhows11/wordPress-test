@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row align-items-center mb-md-5 mb-3">
             <div class="col-md-4">
-                <img class="pr-3 mb-md-0 mb-4" src="assets/img/logo-color.png" srcset="assets/img/logo-color@2x.png 2x" alt="">
+                <img class="pr-3 mb-md-0 mb-4" src="<?php echo CLAB_URL; ?>assets/img/logo-color.png" srcset="<?php echo CLAB_URL; ?>assets/img/logo-color@2x.png 2x" alt="">
             </div>
             <div class="col-md-8">
                 <span class="font-lora h5 font-weight-normal">- یک بسته ساز قدرتمند خلاق برای بوت استرپ 4</span>
