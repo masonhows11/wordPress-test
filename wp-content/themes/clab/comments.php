@@ -115,6 +115,8 @@
                             </div>
                         </div> ',
                         'title_reply' => '',
+                        'submit_field' => '<div class="text-center mt-md-5">%1$s %2$s</div>',
+                        'submit_button' => '<button type="submit" class="btn btn-theme">ارسال</button>',
                     ]); ?>
                 </div>
                 <!--comment form end-->
