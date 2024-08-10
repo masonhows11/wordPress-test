@@ -9,7 +9,7 @@
                         <?php wp_list_comments([
                             'type' => 'comment',
                             'style' => 'ul',
-                            'callback' => 'calb_comment'
+                           // 'callback' => 'calb_comment'
                         ], get_comments(['post_id' => get_the_ID()])); ?>
                         <!-- <li class="comment ">
                              <article class="comment-body">
@@ -92,7 +92,7 @@
                     </h3>
                     <?php comment_form([
                         'fields' => [
-                            'author' => ' <div class=" col-md-4">
+                            'author' => '<div class="row"><div class=" col-md-4">
                                 <div class="form-group">
                                     <input type="text" name="author" class="form-control" placeholder="نام*" required="">
                                 </div>
@@ -106,13 +106,14 @@
                                 <div class="form-group ">
                                     <input type="text" name="url" class="form-control" placeholder="وب سایت" >
                                 </div>
-                             </div>',
+                             </div> </div> ',
                         ],
-                        'comments_field' => ' <div class="form-group">
+                        'comment_field' =>
+                        '<div class="form-group">
                             <div class="controls">
                                 <textarea name="comment" id="message" rows="5" placeholder="نظر*" class="form-control" required=""></textarea>
                             </div>
-                        </div>',
+                        </div> ',
                         'title_reply' => '',
                     ]); ?>
                 </div>
