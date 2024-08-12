@@ -1,15 +1,10 @@
 <?php
-
-
-
 abstract class page{
-
     protected $page_title;
     protected $menu_title;
     protected $capability;
     protected $menu_slug;
     protected $callback;
-
 
     public function __construct()
     {
