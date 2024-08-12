@@ -16,6 +16,7 @@ class OOP_Plugin{
     {
       
         $this->Constants();
+        $this->init();
     }
 
 
@@ -32,9 +33,9 @@ class OOP_Plugin{
 
     public function init()
     {
-    
         register_activation_hook(__FILE__,[$this,'activation']);
         register_deactivation_hook(__FILE__, [$this,'deactivation']);
+        add_action('wp_enqueue_scripts',[$this,'register_assets']);
     }
 
     public function activation()
@@ -49,11 +50,12 @@ class OOP_Plugin{
 
     public function register_assets()
     {
-        
-        
-
+        wp_register_style('oop_custom_css',OOP_URL.'assets/css/custom.css');
+        wp_enqueue_style('oop_custom_css');
     }
 
 
 
 }
+
+new OOP_Plugin;
