@@ -36,6 +36,8 @@ class OOP_Plugin{
         register_activation_hook(__FILE__,[$this,'activation']);
         register_deactivation_hook(__FILE__, [$this,'deactivation']);
         add_action('wp_enqueue_scripts',[$this,'register_assets']);
+
+        $this->load_pages();
     }
 
     public function activation()
@@ -54,6 +56,12 @@ class OOP_Plugin{
         wp_enqueue_style('oop_custom_css');
     }
 
+
+    public function load_pages()
+    {
+        include 'pages/users.class.php';
+        new Users;
+    }
 
 
 }
