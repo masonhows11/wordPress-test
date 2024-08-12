@@ -1,5 +1,5 @@
 <?php
-abstract class page{
+abstract class page {
     protected $page_title;
     protected $menu_title;
     protected $capability;

@@ -1,5 +1,4 @@
 <?php
-
 /*
 Plugin Name: oop plugin test
 Plugin URI: http://websolor.ir/
@@ -9,8 +8,7 @@ Text Domain: oop test
 Version: 1.0.0
 Author URI: http://websolor.ir/
 */
-
-class OOP_Plugin{
+class OOP_Plugin {
 
     public function __construct()
     {
@@ -31,7 +29,6 @@ class OOP_Plugin{
         add_action('wp_enqueue_scripts',[$this,'register_assets']);
         $this->load_pages();
     }
-
     public function activation()
     {
         
@@ -54,8 +51,6 @@ class OOP_Plugin{
         new Users;
         new Foods;
     }
-
-
 }
 
 new OOP_Plugin;

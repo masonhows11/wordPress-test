@@ -9,7 +9,6 @@ class Foods extends page {
         $this->menu_slug = 'oop_foods';
         parent::__construct();
     }
-
     public function index()
     {
         echo '<h1> غذاها </h1>';
