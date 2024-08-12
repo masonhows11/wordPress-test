@@ -60,7 +60,9 @@ class OOP_Plugin{
     public function load_pages()
     {
         include 'pages/users.class.php';
+        include 'pages/foods.class.php';
         new Users;
+        new Foods;
     }
 
 

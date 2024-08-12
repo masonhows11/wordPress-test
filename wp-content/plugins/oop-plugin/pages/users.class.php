@@ -2,7 +2,7 @@
 
 
 
-include 'page.php';
+include_once 'page.php';
 
 class Users extends page{
 
