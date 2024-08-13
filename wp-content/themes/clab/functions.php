@@ -6,18 +6,21 @@ const CLAB_APP = CLAB_PATH . 'app' . DIRECTORY_SEPARATOR ;
 const CLAB_ASSETS_URL = CLAB_URL . 'assets';
 //
 add_action('after_setup_theme','clab_setup');
-function clab_setup(){
+if(!function_exists('clab_setup')){
+    function clab_setup(){
 
-    // add title
-    add_theme_support('title-tag');
-    // add custom image size
-    add_image_size('blog-index-thumbnail-size', 730, 432);
-    // register nav menu location
-    register_nav_menu('top', 'Custom Top Menu');
-    // register_nav_menu( 'top menu', 'Top menu');
+        // add title
+        add_theme_support('title-tag');
+        // add custom image size
+        add_image_size('blog-index-thumbnail-size', 730, 432);
+        // register nav menu location
+        register_nav_menu('top', 'Custom Top Menu');
+        // register_nav_menu( 'top menu', 'Top menu');
 
 
+    }
 }
+
 function register_clab_blog_sidebar(){
 
     //register sidebars
